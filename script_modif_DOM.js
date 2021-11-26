@@ -53,17 +53,20 @@ populateImages()
 
 
 // Modification n°5     deleteLastCards()
-function deleteLastCards(){
-    let length = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4").length
+function deleteLastCards(num){
 
-    for(var i = length-3 ; i < length ; i++){
-        lastCard = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4")[i]
-        console.log(lastCard)
-        // elementFromDOM.remove(lastCard)
+    if(num > document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4").length){
+        console.log("!! nombre de cartes à supprimer supérieur au nombre de cartes de la page !!")
+        return false
     }
+    for (let i = 0; i < num; i++){
+        let length = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4").length
+        lastCard = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4")[length-1]
+        lastCard.remove()
+    }    
 
 }
-deleteLastCards()
+deleteLastCards(3)
 
 
 // Modification n°6     changeCardsText()
