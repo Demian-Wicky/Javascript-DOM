@@ -70,11 +70,27 @@ deleteLastCards(3)
 
 
 // Modification n°6     changeCardsText()
+function changeCardsText(){
+    let textContents = ["L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web", "Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML", "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs. C'est un langage orienté objet à prototype."]
 
+    for (let i = 0; i < 3; i++){
+        document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4")[i].getElementsByClassName("card-text")[0].innerText = textContents[i]
+    }
 
+}
+changeCardsText()
 
 // Modification n°7     changeViewButtons()
+function changeViewButtons(){
 
+    let length = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4").length
+    for (let i = 0; i < length; i++ ){
+        button = document.getElementsByClassName("album")[0].getElementsByClassName("col-md-4")[i].getElementsByClassName("btn-group")[0].firstElementChild
+        button.classList.remove("btn-outline-secondary")
+        button.classList.add("btn-success")
+    }
 
+}
+changeViewButtons()
 
 // Modification n°8     tordu()
